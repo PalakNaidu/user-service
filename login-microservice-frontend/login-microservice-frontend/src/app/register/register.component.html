@@ -1,0 +1,30 @@
+<div class="form-page">
+  <div class="form-container">
+    <div class="form-logo">📚</div>
+    <h2>Create your <span class="highlight">BookBazaar</span> account</h2>
+    <p class="subtitle">Sign up to start your reading journey!</p>
+    <div *ngIf="error" style="color: #e53e3e; margin-bottom: 10px">
+      {{ error }}
+    </div>
+    <form (ngSubmit)="onSubmit()">
+      <label>Name:</label>
+      <input [(ngModel)]="name" name="name" type="text" required />
+      <label>Email:</label>
+      <input [(ngModel)]="email" name="email" type="email" required />
+      <label>Password:</label>
+      <input [(ngModel)]="password" name="password" type="password" required />
+      <label>Confirm Password:</label>
+      <input
+        [(ngModel)]="confirmPassword"
+        name="confirmPassword"
+        type="password"
+        required
+      />
+      <button type="submit">Register</button>
+    </form>
+    <p class="switch-link">
+      Already have an account?
+      <a routerLink="/login">Log in here</a>
+    </p>
+  </div>
+</div>
